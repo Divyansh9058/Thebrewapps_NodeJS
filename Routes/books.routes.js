@@ -87,3 +87,12 @@ bookRouter.delete('/delete/:id', async (req, res) => {
 module.exports = {
     bookRouter
 }
+
+
+// PORT = 5000
+
+// mongoURL = mongodb+srv://nonibro:nonibro@cluster0.0mmcd.mongodb.net/ZEXWEB?retryWrites=true&w=majority
+
+
+// deploy = 
+// https://bored-lab-coat-worm.cyclic.app
