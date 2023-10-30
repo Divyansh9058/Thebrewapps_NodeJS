@@ -34,8 +34,14 @@ bookRouter.patch("/update/:id",async(req,res)=>{
     try {
         const id=req.params.id;
         const payload=req.body;
-        await bookmodel.findByIdAndUpdate(id,payload)
-        res.status(200).send({"msg":`note with id:${id} has been updated`})
+        const data = await bookmodel.findByIdAndUpdate(id,payload);
+
+        if(!data){
+            res.status(400).send({"msg":`Data Not Found`})
+        }else{
+            res.status(200).send({"msg":`note with id:${id} has been updated`})
+        }
+
     } catch (error) {
         res.status(500).send({msg:"something went wrong",error:error.message})
     }
@@ -46,8 +52,14 @@ bookRouter.patch("/update/:id",async(req,res)=>{
 bookRouter.delete('/delete/:id',async(req,res)=>{
     try{
         const bookId=req.params.id;
-        await bookmodel.findByIdAndDelete({_id:bookId})
-        res.status(200).send({"msg":`note with id:${bookId} has been deleted`});
+        const data = await bookmodel.findByIdAndDelete({_id:bookId})
+
+        if(data){
+            res.status(200).send({"msg":`note with id:${bookId} has been deleted`});
+        }else{
+            res.status(400).send({"msg":`Data Not Found`})
+        }
+
     }
     catch (error) {
         res.status(500).send({msg:"Something went wrong",error:error.message})
