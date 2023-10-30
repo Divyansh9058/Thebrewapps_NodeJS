@@ -1,4 +1,4 @@
-# Book Management API
+# Book Management
 
 This Node.js-based RESTful API allows users to manage books by performing CRUD operations. The application uses MongoDB as the database for book storage.
 
