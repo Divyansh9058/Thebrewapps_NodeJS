@@ -1,7 +1,8 @@
 const express = require("express");
 
 const {connection} = require("./Configs/db");
-const {bookRouter} = require("./Routes/books.routes")
+const {bookRouter} = require("./Routes/books.routes");
+
 const app = express();
 
 require("dotenv").config();
@@ -17,4 +18,4 @@ app.listen(process.env.PORT,async()=>{
         console.log(error.message)
     }
     console.log(`Sever is running at ${process.env.PORT}`)
-})
+});
