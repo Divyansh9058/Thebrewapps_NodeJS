@@ -31,8 +31,8 @@ For a comprehensive demonstration of all CRUD operations, including various test
 Create a `.env` file in the root directory and configure the following variables:
 
 ```plaintext
-PORT=3000
-MONGODB_URI=your_mongodb_connection_string
+PORT=5000
+mongo_URL= MongoDB Atlas Path 
 ```
 ## Running the Application
 
